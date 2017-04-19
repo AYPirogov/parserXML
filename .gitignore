@@ -1,0 +1,14 @@
+#Compiled source#
+#################
+*.class
+
+#prog file#
+/prog
+
+#Special directories#
+bin/
+sol/
+solL1/
+solLi/
+inst/
+tex/
