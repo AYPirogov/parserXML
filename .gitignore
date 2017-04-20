@@ -6,6 +6,7 @@
 /prog
 
 #Special directories#
+.DS_Store
 bin/
 sol/
 solL1/

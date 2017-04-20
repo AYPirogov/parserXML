@@ -25,19 +25,22 @@ public class FileBuilder {
 			bw = new BufferedWriter(fw);
 			//bw.append("\\n"); use to append new line in the end of file
 			
-			bw.append("\\documentclass{article}\n");
+			bw.append("\\documentclass[a4paper]{article}\n");
 			bw.append("\\usepackage{pst-tree}\n");
 			bw.append("\\usepackage{pstricks,pstcol,pst-node}\n");
 			bw.append("\\usepackage[french]{babel}\n");
 			bw.append("\\usepackage{amsfonts,amsmath}\n");
 			bw.append("\\usepackage[dvips]{graphicx}\n");
+			bw.append("\\usepackage{lscape}\n");
 			bw.append("\\pagestyle{empty}\n");
 			bw.append("\\begin{document}\n");
+			bw.append("\\begin{landscape}\n");
 			bw.append("\\begin{figure}[ht!]\n");
 			
 			float buf = inst.time + 1f;
 			int y = inst.nM*inst.rMax + 1;
 			
+			bw.append("\\psscalebox{" + 22/buf + "}{\n");
 			bw.append("\\begin{pspicture*}(-3,-1)(" + buf + "," + y + ")\n");
 			bw.append("\\rput[t](0,-0.2){0}\n");
 			buf = inst.time + 0.5f;
@@ -89,8 +92,9 @@ public class FileBuilder {
 			}
 			
 			bw.append("\\end{pspicture*}\n");
-
+			bw.append("}\n");
 			bw.append("\\end{figure}\n");
+			bw.append("\\end{landscape}\n");
 			bw.append("\\end{document}\n");
 
 			System.out.println("Done");
